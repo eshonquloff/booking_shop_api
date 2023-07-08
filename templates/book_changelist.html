@@ -1,0 +1,20 @@
+{% extends 'admin/change_list.html' %}
+
+{% block object-tools %}
+    <div>
+        <form action="top-10/" method="POST">
+            {% csrf_token %}
+            <button type="submit">Top 10</button>
+        </form>
+        <form action="top-50/" method="POST">
+            {% csrf_token %}
+            <button type="submit">Top 50</button>
+        </form>
+        <form action="top-100/" method="POST">
+            {% csrf_token %}
+            <button type="submit">Top 100</button>
+        </form>
+    </div>
+    <br/>
+    {{ block.super }}
+{% endblock %}
